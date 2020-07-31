@@ -1,13 +1,12 @@
 ## React Flicking Paging
 
 [egjs-flicking](https://naver.github.io/egjs-flicking/)
+
 [@egjs/react-flicking](https://github.com/naver/egjs-flicking/blob/master/packages/react-flicking/README.md)
 
-```
+```tsx
 import React, { useRef, useState } from "react";
 import Flicking from "@egjs/react-flicking";
-
-import "./flicking.css";
 
 const FlickingPaging = ({ itemList }) => {
     const flickingRef = useRef(null);
@@ -17,7 +16,6 @@ const FlickingPaging = ({ itemList }) => {
     return (
         <>
             <Flicking
-                className="flicking flicking0"
                 gap={10}
                 onMoveEnd={e => {
                     const flicking = e.currentTarget;
@@ -28,12 +26,7 @@ const FlickingPaging = ({ itemList }) => {
             >
                 {
                     itemList.map((item, index) => {
-                        return (
-                            <div key={index}
-                                className={"panel"}>
-                                {item}
-                            </div>
-                        );
+                        return (<div key={index}>{item}</div>);
                     })
                 }
             </Flicking>
@@ -41,9 +34,8 @@ const FlickingPaging = ({ itemList }) => {
                 {
                     [...Array(totalPage)].map((any, index) => {
                         return (
-                            <button key={index}
-                                style={{ 'font-weight': (index === currentPage) ? 'bold' : 'normal' }}
-                                onClick={() => flickingRef.current.moveTo(index)}>{index + 1}
+                            <button key={index} onClick={() => flickingRef.current.moveTo(index)}>
+                                {index + 1}
                             </button>
                         );
                     })
