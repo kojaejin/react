@@ -1,8 +1,10 @@
 ## React Flicking Paging
 
-[egjs-flicking](https://naver.github.io/egjs-flicking/)
+<h1 align=center>
+  <img width="800" alt="React Flicking Paging" src="https://raw.githubusercontent.com/kojaejin/react/master/img/react_flicking_paging.png">
+</h1>
 
-[@egjs/react-flicking](https://github.com/naver/egjs-flicking/blob/master/packages/react-flicking/README.md)
+[egjs-flicking](https://naver.github.io/egjs-flicking/) [@egjs/react-flicking](https://github.com/naver/egjs-flicking/blob/master/packages/react-flicking/README.md)
 
 ```tsx
 import React, { useRef, useState } from "react";
