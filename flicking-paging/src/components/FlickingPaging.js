@@ -1,14 +1,14 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import Flicking from "@egjs/react-flicking";
 
 import "./flicking.css";
 
-const FlickingPaging = ({itemList}) => {
+const FlickingPaging = ({ itemList }) => {
     const flickingRef = useRef(null);
-	const [currentPage, setCurrentPage] = useState(2);
-	const totalPage = itemList.length;
+    const [currentPage, setCurrentPage] = useState(2);
+    const totalPage = itemList.length;
 
-	return (
+    return (
         <>
             <Flicking
                 className="flicking flicking0"
@@ -25,26 +25,26 @@ const FlickingPaging = ({itemList}) => {
                         return (
                             <div key={index}
                                 className={"panel"}>
-                                    {item}
+                                {item}
                             </div>
                         );
                     })
                 }
             </Flicking>
             <div className="buttons">
-				{
-					[...Array(totalPage)].map((any, index) => {
+                {
+                    [...Array(totalPage)].map((any, index) => {
                         return (
                             <button key={index}
-                                style={{'font-weight': (index === currentPage) ? 'bold': 'normal'}}
+                                style={{ 'font-weight': (index === currentPage) ? 'bold' : 'normal' }}
                                 onClick={() => flickingRef.current.moveTo(index)}>{index + 1}
                             </button>
                         );
-					})
-				}
-			</div>
+                    })
+                }
+            </div>
         </>
-	);
+    );
 };
 
 export default FlickingPaging;
